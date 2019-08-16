@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="search">
+    <input class="iconfont" type="search" placeholder="搜索" auto-focus/>
+  </view>
+
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="250" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
