@@ -1,0 +1,24 @@
+@import "../../common/style.wxss";
+/* 公共搜索框 */
+
+.search{
+  width: 100%;
+  z-index: 9;
+  height:60rpx;
+  position: fixed;
+  top:0;
+  padding:20rpx 0;
+  background-color: #ff2d4a;
+}
+.search .iconfont{
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 90%;
+  font-size: 14px;
+  color: #999;
+  margin-left: 5%;
+  text-align: center;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: #fff;
+}

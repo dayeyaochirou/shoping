@@ -1,14 +1,48 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="search">
-    <input class="iconfont" type="search" placeholder="搜索" auto-focus/>
-  </view>
-
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+<!-- 搜索框 -->
+  <search/>
+<!-- 轮播图 -->
+  <swiper indicator-dots 
+  autoplay=true
+  interval="5000"
+  duration="1000"
+   circular>
     <block wx:for="{{imgUrls}}" wx:key="index">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" width="355" height="250" />
+        <image src="{{item}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>
+<!-- 导航 -->
+<view class="nav">
+  <image wx:for="{{nav}}" 
+          wx:key="index"
+          src="{{item.image_src}}">
+  </image>
+</view>
+<!-- 楼层啦啦 -->
+<view class="floors" 
+wx:for="{{floor}}"
+wx:key="{{index}}"
+>
+    <image src="{{item.floor_title.image_src}}"></image>
+  <view class="floors-body">
+     <view class="floors-left">
+      <image src="{{item.product_list[0].image_src}}"></image>
+    </view>
+    <view class="floors-right">
+      <image src="https://api.zbztb.cn/pyg/pic_floor01_2@2x.png"
+      wx:for="{{item.product_list}}"
+      wx:key="{{index}}"
+      wx:if="{{index>0}}"
+      src="{{item.image_src}}"
+      ></image>
+    </view>
+  </view>
+</view>
+
+
+
+
 </view>

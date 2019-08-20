@@ -2,7 +2,7 @@ import request from './utils/request.js'
 //app.js
 App({
   onLaunch() {
-    request.defaults.baseUrl ='https://api.zbztb.cn';
+    request.defaults.baseUrl ='https://api.zbztb.cn/api/public/v1';
     // 定义错误
     request.onError(res=>{
       if (res.statusCode == 400 || res.statusCode == 401){

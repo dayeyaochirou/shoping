@@ -1,0 +1,6 @@
+
+  <view class="search">
+    <view class="iconfont">
+      <text class="iconsearch"></text> 搜索
+    </view>
+  </view>

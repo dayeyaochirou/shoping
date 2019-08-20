@@ -1,2 +1,69 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="car">
+  <!-- 收件人 -->
+  <view class="gather" bindtap="addAddress" wx:if="{{gather.userName}}">
+    <view class="people">
+      <view>收货人:
+        <text> {{gather.userName}}</text>
+      </view>
+      <view class="num"> {{gather.telNumber}}</view>
+    </view>
+    <view class="address">
+      收货地址:
+      <text>{{gather.address}}</text>
+    </view>
+  </view>
+  <view class="gather" bindtap="addAddress" wx:else>
+    点击添加用户
+  </view>
+  <image src="../../images/cart_border@2x.png" class="img"></image>
+  <!-- 已选购物车 -->
+  <view class="shoping-title">
+    <text class="iconfont icondianpu1"></text> 已选购物车
+  </view>
+  <!-- 购物车列表 -->
+  <view class="car-list" 
+  wx:for="{{goods}}"
+  wx:key="{{index}}">
+    <view class="hook">
+      <icon type="success" size="16" color="red" />
+    </view>
+    <image class="slogo" src="{{item.goods_small_logo}}"></image>
+    <view class="details">
+      <view class="goods-name">{{item.goods_name}}</view>
+      <view class="details-bottom">
+        <view class="goods-price">
+          ￥
+          <text>{{item.goods_price}}</text>.00
+        </view>
+        <view class="addition">
+          <view>-</view>
+          3
+          <view>+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部的全选 -->
+  <view class="footer">
+    <view class="footer-left">
+      <icon type="success" size="16" color="red"></icon>
+      全选
+    </view>
+    <view class="footer-center">
+      <view>合计:
+        <text class="colorRed">￥ 151562</text>
+      </view>
+      <text class="colorGray">包含运费</text>
+    </view>
+    <view class="checkout">结算</view>
+</view>
+
+
+
+
+
+
+
+
+
+</view>

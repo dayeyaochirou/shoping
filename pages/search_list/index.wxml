@@ -1,0 +1,25 @@
+<view class="father">
+  <!-- 搜索框 -->
+  <view class="searchipt">
+   <view class="input">
+   <text class="iconfont iconsearch"></text>
+   {{keyword}}</view>
+  </view>
+  <view class="nav">
+    <view class="nav-item {{current==index?'pitch':''}}" wx:for="{{['综合','销量','价格']}}" wx:key="{{index}}" bindtap="addClass" data-index="{{index}}">{{item}}</view>
+  </view>
+  <!-- 详情例子 -->
+  <navigator class="details" 
+  wx:for="{{goodsList}}"
+  wx:key="{{index}}"
+  url="/pages/goods_details/index?goods_id={{item.goods_id}}">
+    <image src="{{ item.goods_small_logo }}"></image>
+    <view class="details-right">
+      <view class="goodsname">{{item.goods_name}}</view>
+      <view class="goods_price">
+       ￥ <text class="goods_price_red">{{item.goods_price}}.00</text>
+      </view>
+    </view>
+  </navigator>
+  <view class="load-more">{{ hasMore ? '加载更多' : '没啦' }}</view>
+</view>

@@ -1,0 +1,40 @@
+<swiper class="swiper" indicator-dots circular autoplay>
+  <block wx:for="{{message.pics}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item.pics_big}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="price">￥{{message.goods_price}}</view>
+<view class="goods">
+  <view class="goodsname">{{message.goods_name}}</view>
+  <view class="goodsright">
+    <view class="iconfont iconshoucang1"></view>
+    收藏
+  </view>
+</view>
+<view class="express">快递 : 免运费 </view>
+
+<view class="promotion">
+  促销
+  <text>满300减30元</text>
+</view>
+
+<view class="footer">
+ <button class="contact" open-type="contact" bindcontact="handleContact">
+    联系客服
+  </button>
+  <view class="server">
+    <view class="iconfont iconkefu1"></view> 联系客服
+  </view>
+  <navigator class="car"
+  url="/pages/cart/index"
+  open-type="switchTab"
+ >
+    <view class="iconfont icongouwuche"></view> 购物车
+ </navigator>
+  <view class="btn-addCar"
+  bindtap="addCar"
+  >加入购物车</view>
+  <view class="btn-buy">立即购买</view>
+</view>

@@ -1,1 +1,71 @@
-/* pages/category/index.wxss */
+
+
+.category{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-top: 100rpx;
+}
+
+.category-body{
+  display: flex;
+  height: 100%;
+}
+/* 左边的搜索选项 */
+.category-left{
+  width: 200rpx;
+  background: #f6f6f6;
+  height: 100%;
+  overflow: scroll;
+}
+.category-right-father{
+  height: 100%;
+  overflow: scroll;
+}
+.category-left-list{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  border-bottom:1px #eee solid;
+}
+.active{
+  background: #fff;
+  color: #ff2d4a;
+  position: relative;
+}
+.active::before {
+  display: block;
+  content: "";
+  width:4px;
+  height: 80rpx;
+  background:#ff2d4a;
+  position: absolute;
+}
+.category-right{
+  width: 550rpx;
+}
+.category-right-title{
+  width: 100%;
+  text-align: center;
+  color: #666;
+}
+.category-right-title text{
+  color: #ddd;
+}
+.right-list{
+  display: flex;
+  width:100%;
+  flex-wrap: wrap;
+}
+.right-list-item{
+  width: 33.3%;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+.right-list-item image{
+  width: 120rpx;
+  height: 120rpx;
+}

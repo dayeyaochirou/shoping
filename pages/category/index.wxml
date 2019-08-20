@@ -1,2 +1,32 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<!-- 分类页面 -->
+<view class="category">
+  <!-- 搜索 -->
+  <search/>
+  <view class="category-body">
+    <!-- 左边的菜单栏 -->
+    <view class="category-left">
+      <view class="category-left-list {{current == index ? 'active' :''}}" wx:for="{{arrays}}" wx:key="{{index}}" bindtap="clickList" data-index="{{index}}">
+        {{item.cat_name}}
+      </view>
+    </view>
+    <!-- 右边的广告墙 -->
+    <view class="category-right-father">
+      <view class="category-right" wx:for="{{arrays[current].children}}" wx:key="{{index}}">
+        <view class="category-right-title">
+          <text>/</text> {{item.cat_name}}
+          <text>/</text>
+        </view>
+        <view class="right-list">
+          <navigator class="right-list-item"
+           wx:for="{{item.children}}"
+           wx:key="{{index}}"
+           url="/pages/search_list/index?keyword={{item.cat_name}}">
+            <image src="{{item.cat_icon}}">
+            </image>
+            <view>{{item.cat_name}}</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
